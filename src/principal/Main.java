@@ -8,7 +8,7 @@ import componentesLista.ListaEnlazadaArreglo;
 public class Main {
 	private static final String menuPrincipal = "1.Adicionar\n2.Eliminar\n0.Salir\n:";
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		
 		ListaEnlazadaArreglo lista1 = new ListaEnlazadaArreglo();
 		int op;
@@ -42,7 +42,7 @@ public class Main {
 	{
 		
 	}
-	public static void adicionar(ListaEnlazadaArreglo lista) throws IOException
+	public static void adicionar(ListaEnlazadaArreglo lista) throws Exception
 	{
 		System.out.print("Adicionar:");
 		lista.adicionar(reader.readLine());

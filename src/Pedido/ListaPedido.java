@@ -7,7 +7,7 @@ public class ListaPedido {
 	private ListaEnlazadaArreglo listaPriori = new ListaEnlazadaArreglo();
 	private ListaEnlazadaArreglo listaID = new ListaEnlazadaArreglo();
 	
-	public void HacerPedido(Integer b){
+	public void HacerPedido(Integer b) throws Exception{
 		Integer dirIDeliminada;
 		dirIDeliminada=getListaID().eliminarYretornarDir(b);
 		System.out.println(dirIDeliminada);
@@ -15,7 +15,7 @@ public class ListaPedido {
 		getListaDescrip().eliminarPorDir(dirIDeliminada);
 	}
 	
-	public void agregarPedido(String s, Integer a, Integer b)
+	public void agregarPedido(String s, Integer a, Integer b) throws Exception
 	{
 		getListaDescrip().adicionar(s);
 		getListaPriori().adicionar(a);

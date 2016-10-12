@@ -13,11 +13,15 @@ public class ListaEnlazadaArreglo {
 		
 	}
 	
-	public void adicionar(Object dato)
+	public void adicionar(Object dato) throws Exception
 	{
 		Nodo nodoEntrante = new Nodo(dato);
 		Integer dirNodoActual = getPrincipio();
 		Integer dirLibre = direccionLibre();
+		if(dirLibre == null)
+		{
+			throw new Exception("=============ERROR:Lista llena");
+		}
 		
 		if(getPrincipio() == null)
 		{
@@ -38,15 +42,20 @@ public class ListaEnlazadaArreglo {
 		}
 	}
 	
-	public Object eliminar(Object dato)
+	/*public Object eliminar(Object dato)
 	{
 		Object retorno = null;
 		Nodo nodoActual = getNodo()[getPrincipio()];
 		Nodo nodoAnterior = null;
-		while(!nodoActual.getDato().equals(dato))
+		boolean salir= false;
+		while(!nodoActual.getDato().equals(dato) && !salir)
 		{
 			nodoAnterior = nodoActual;
-			nodoActual = getNodo()[nodoActual.getSiguiente()];
+			if(!nodoActual.getSiguiente().equals(null))
+			{
+				nodoActual = getNodo()[nodoActual.getSiguiente()];
+			} else salir = true;
+			
 		}
 		if(nodoAnterior != null)
 		{
@@ -56,7 +65,6 @@ public class ListaEnlazadaArreglo {
 			getNodo()[nodoAnterior.getSiguiente()].setSiguiente(null);
 			retorno = nodoActual.getDato();
 			nodoActual = null;
-			System.out.println("por aqa");
 		}
 		else
 		{
@@ -64,22 +72,31 @@ public class ListaEnlazadaArreglo {
 			setPrincipio(nodoActual.getSiguiente());
 			getNodo()[getPrincipio()].setDato(null);
 			getNodo()[getPrincipio()].setSiguiente(null);
-			System.out.println("por aqi");
 			retorno = nodoActual.getDato();
 			nodoActual = null;
 		}
 
 		return retorno;
-	}
-	public Integer eliminarYretornarDir(Object dato)
+	}*/
+	public Integer eliminarYretornarDir(Object dato) throws Exception
 	{
 		Integer retorno;
 		Nodo nodoActual = getNodo()[getPrincipio()];
 		Nodo nodoAnterior = null;
-		while(!nodoActual.getDato().equals(dato))
+		boolean salir = false;
+		while(!nodoActual.getDato().equals(dato) && !salir)
 		{
 			nodoAnterior = nodoActual;
-			nodoActual = getNodo()[nodoActual.getSiguiente()];
+			System.out.println(nodoActual.getSiguiente());
+			if(!(nodoActual.getSiguiente()==null))
+			{
+				nodoActual = getNodo()[nodoActual.getSiguiente()];
+			} else salir = true;
+			
+		}
+		if(!nodoActual.getDato().equals(dato) && salir)
+		{
+			throw new Exception("No se encontro ningun dato");
 		}
 		if(nodoAnterior != null)
 		{
@@ -131,7 +148,7 @@ public class ListaEnlazadaArreglo {
 	public Integer direccionLibre()
 	{
 		Integer dirLibre = null;
-		for(int i = 0; i<100 && dirLibre == null;i++)
+		for(int i = 0; i<10 && dirLibre == null;i++)
 		{
 			if(getEspacio()[i]==true)
 			{
