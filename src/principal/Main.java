@@ -36,7 +36,7 @@ public class Main {
 	public static void eliminar(ListaEnlazadaArreglo lista) throws IOException
 	{
 		System.out.println("Dato a Eliminar:");
-		System.out.println(lista.eliminar(reader.readLine()));
+		//System.out.println(lista.eliminar(reader.readLine()));
 	}
 	public static void eliminarPrimero(ListaEnlazadaArreglo lista)
 	{
