@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import Pedido.ListaPedido;
-import componentesLista.ListaEnlazadaArreglo;
 
 public class Main2 {
 	private static final String menuPrincipal = "1.Agregar Pedido\n2.Eliminar Primer Pedido\n3.Eliminar Pedido Por ID\n4.Eliminar Primer Pedido Por Prioridad\n0.Salir\n:";
