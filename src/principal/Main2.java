@@ -37,14 +37,82 @@ public class Main2 {
 	}
 	public static void adicionar(ListaPedido ls) throws NumberFormatException, Exception
 	{
+		String desc = null;
+		boolean goodIn = false;
+		do{
+			System.out.println("Inserte la descripcion:");
+			try{
+				desc=reader.readLine();
+				goodIn = true;
+			}
+			catch(IOException e)
+			{
+				System.out.println("Problema con teclado, intente denuevo");
+			}
+			
+		}while(!goodIn);
+		goodIn = false;
+		int prio = 0;
+		do{
+			
+			System.out.println("Inserte la prioridad:");
+			try{
+				prio=Integer.parseInt(reader.readLine());
+				goodIn = true;
+			}
+			
+			catch(IOException e)
+			{
+				System.out.println("Problema con teclado, intente denuevo\n\n");
+			}
+			
+			catch(NumberFormatException e)
+			{
+				System.out.println("Inserte un numero porfavor\n\n");
+			}
+		}while(!goodIn);
+		goodIn = false;
+		int id = 0;
+		do{
+		System.out.println("Inserte el ID:");
+		try{
+			id=Integer.parseInt(reader.readLine());
+			goodIn=true;
+		}
 		
-		ls.agregarPedido(reader.readLine(),Integer.parseInt(reader.readLine()),Integer.parseInt(reader.readLine()));
+		catch(IOException e)
+		{
+			System.out.println("Problema con teclado, intente denuevo\n\n");
+		}
+		
+		catch(NumberFormatException e)
+		{
+			System.out.println("Inserte un numero porfavor\n\n");
+		}
+		}while(!goodIn);
+		goodIn = false;
+		ls.agregarPedido(desc,prio,id);
 	}
 	public static void eliminar(ListaPedido ls) throws Exception
 	{
 		if(ls.getListaID().getPrincipio()==null)
 			throw new Exception("Lista Vacia");
-		ls.HacerPedido(Integer.parseInt(reader.readLine()));
+		boolean goodIn = false;
+		do{
+			try{
+				ls.HacerPedido(Integer.parseInt(reader.readLine()));
+				goodIn=true;
+			}
+			catch(IOException e)
+			{
+				System.out.println("Problema con teclado, intente denuevo\n\n");
+			}
+			
+			catch(NumberFormatException e)
+			{
+				System.out.println("Inserte un numero porfavor\n\n");
+			}
+		}while(!goodIn);
 	}
 	public static void	eliminarPrimero(ListaPedido lista) throws Exception
 	{
