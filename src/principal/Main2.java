@@ -23,9 +23,8 @@ public class Main2 {
 				{
 				case 1: adicionar(ls);break;
 				case 2: eliminarPrimero(ls);break;
-				case 3: try{eliminar(ls);}catch(Exception e){System.out.println(e.getMessage());};break;
+				case 3: eliminar(ls);break;
 				case 4: eliminarPorPrioridad(ls);break;
-				case 5: eliminarPrimero(ls);break;
 				}
 			}catch(Exception e)
 			{
