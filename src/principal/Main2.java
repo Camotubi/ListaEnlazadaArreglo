@@ -12,6 +12,15 @@ public class Main2 {
 	public static void main(String[] args)  {
 		int op =-1;
 		ListaPedido ls = new ListaPedido();
+		
+		System.out.println("\tUNIVERSIDAD TECNOLÓGICA DE PANAMÁ\t\n "
+				+ "\t \t  Integrantes\t \n"
+				+ "\t Acevedo, Roderik 8-906-2070\n"
+				+ "\t Henriquez, Roy 8-928-1689\n"
+				+ "\t   Tuñón, Carlos 8-916-809\n\n"
+				+ "\t \t Grupo: 1SF-121\n"
+				+ "\t  Profesora: Yolanda Miguelena\n\n"
+				+ "Materia: Estrucutura y Representación de Datos\n");
 		do
 		{
 			try{
@@ -25,6 +34,14 @@ public class Main2 {
 				case 2: eliminarPrimero(ls);break;
 				case 3: eliminar(ls);break;
 				case 4: eliminarPorPrioridad(ls);break;
+				default: 
+					{
+					if(op==0){
+						System.out.println("Terminó ejecución.");
+						break;
+					}else
+						System.out.println("Error de selección.");
+					}
 				}
 			}catch(Exception e)
 			{
@@ -39,8 +56,8 @@ public class Main2 {
 		String desc = null;
 		boolean goodIn = false;
 		do{
-			System.out.println("Inserte la descripcion:");
 			try{
+				System.out.println("Inserte la descripcion:");
 				desc=reader.readLine();
 				goodIn = true;
 			}
@@ -53,9 +70,8 @@ public class Main2 {
 		goodIn = false;
 		int prio = 0;
 		do{
-			
-			System.out.println("Inserte la prioridad:");
 			try{
+				System.out.println("Inserte la prioridad:");
 				prio=Integer.parseInt(reader.readLine());
 				goodIn = true;
 			}
@@ -73,8 +89,9 @@ public class Main2 {
 		goodIn = false;
 		int id = 0;
 		do{
-		System.out.println("Inserte el ID:");
+		
 		try{
+			System.out.println("Inserte ID");
 			id=Integer.parseInt(reader.readLine());
 			goodIn=true;
 		}
@@ -99,6 +116,7 @@ public class Main2 {
 		boolean goodIn = false;
 		do{
 			try{
+				System.out.println("Inserte ID");
 				ls.HacerPedido(Integer.parseInt(reader.readLine()));
 				goodIn=true;
 			}
@@ -111,6 +129,7 @@ public class Main2 {
 			{
 				System.out.println("Inserte un numero porfavor\n\n");
 			}
+			System.out.println("Eliminado correctamente");
 		}while(!goodIn);
 	}
 	public static void	eliminarPrimero(ListaPedido lista) throws Exception
@@ -131,6 +150,7 @@ public class Main2 {
 		int prioridadActual = 0;
 		if(lista.getListaID().getPrincipio() == null)
 			throw new Exception("Lista vacia");
+		
 		for(int i = 0; i<10;i++)
 		{
 			if(lista.getListaPriori().getNodo()[i].getDato()!=null)
@@ -145,6 +165,7 @@ public class Main2 {
 			}
 		}
 		lista.HacerPedido(idPrioridadMAX);
+		System.out.println("Eliminado correctamente");
 	}
 	public static void  printLista(ListaPedido lista){
 		ListaPedido lista1 = lista;

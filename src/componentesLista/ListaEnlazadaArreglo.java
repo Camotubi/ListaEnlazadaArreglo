@@ -42,42 +42,6 @@ public class ListaEnlazadaArreglo {
 		}
 	}
 	
-	/*public Object eliminar(Object dato)
-	{
-		Object retorno = null;
-		Nodo nodoActual = getNodo()[getPrincipio()];
-		Nodo nodoAnterior = null;
-		boolean salir= false;
-		while(!nodoActual.getDato().equals(dato) && !salir)
-		{
-			nodoAnterior = nodoActual;
-			if(!nodoActual.getSiguiente().equals(null))
-			{
-				nodoActual = getNodo()[nodoActual.getSiguiente()];
-			} else salir = true;
-			
-		}
-		if(nodoAnterior != null)
-		{
-			getEspacio()[nodoAnterior.getSiguiente()] = true;
-			nodoAnterior.setSiguiente(nodoActual.getSiguiente());
-			getNodo()[nodoAnterior.getSiguiente()].setDato(null);
-			getNodo()[nodoAnterior.getSiguiente()].setSiguiente(null);
-			retorno = nodoActual.getDato();
-			nodoActual = null;
-		}
-		else
-		{
-			getEspacio()[getPrincipio()] = true;
-			setPrincipio(nodoActual.getSiguiente());
-			getNodo()[getPrincipio()].setDato(null);
-			getNodo()[getPrincipio()].setSiguiente(null);
-			retorno = nodoActual.getDato();
-			nodoActual = null;
-		}
-
-		return retorno;
-	}*/
 	public Integer eliminarYretornarDir(Object dato) throws Exception
 	{
 		Integer retorno;
